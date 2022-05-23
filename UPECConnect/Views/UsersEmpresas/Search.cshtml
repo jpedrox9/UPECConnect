@@ -1,0 +1,81 @@
+﻿@model IEnumerable<UPECConnect.Data.Models.Empresa>
+
+@{
+    ViewData["Title"] = "Create";
+    List<int> emp = (List<int>)ViewData["empresas"];
+    bool EmpContains(int id)
+    {
+        foreach (var i in emp)
+        {
+            if (i == id)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    var check = 0;
+    foreach(var item in Model)
+    {
+        if (!EmpContains(item.Id)) check++;
+    }
+}
+
+<div class="row my-4">
+    <div class="col-6">
+        <h3>Selecione as empresas</h3>
+    </div>
+    <div class="col-6 text-right">
+        <a asp-action="Index" class="btn btn-danger">Voltar</a>
+    </div>
+</div>
+
+
+<form asp-action="Search" method="post" class="mb-3" style="display: flex">
+    <input type="text" placeholder="Pesquisar" name="pesquisa" class="form-control" style="flex: 1; border-radius: 0.25rem 0rem 0rem 0.25rem" />
+    <button type="submit" class="btn btn-dark px-4" style="flex: 0; border-radius: 0rem 0.25rem 0.25rem 0rem"><i class="fa-solid fa-magnifying-glass"></i></button>
+</form>
+
+
+@if (check != 0)
+{
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sigla)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    Opções
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                if (!EmpContains(item.Id))
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Sigla)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            <a asp-action="Create" asp-route-id="@item.Id" class="btn btn-primary mx-1">Entrar</a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Não existem empresas disponíveis.</p>
+}

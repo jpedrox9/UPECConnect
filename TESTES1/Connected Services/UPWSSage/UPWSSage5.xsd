@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Sage" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Sage" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfCondComerciaisArtigoCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CondComerciaisArtigoCliente" nillable="true" type="tns:CondComerciaisArtigoCliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCondComerciaisArtigoCliente" nillable="true" type="tns:ArrayOfCondComerciaisArtigoCliente" />
+  <xs:complexType name="CondComerciaisArtigoCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Artigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Desconto" nillable="true" type="tns:GrelhaDesconto" />
+      <xs:element minOccurs="0" name="Grupo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrecoArtigo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PrecoVenda" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CondComerciaisArtigoCliente" nillable="true" type="tns:CondComerciaisArtigoCliente" />
+  <xs:complexType name="GrelhaDesconto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Desconto1" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Desconto2" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Desconto3" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Desconto4" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Desconto5" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="LimiteInferior1" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LimiteInferior2" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LimiteInferior3" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LimiteInferior4" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LimiteInferior5" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PrecoVenda1" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="PrecoVenda2" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="PrecoVenda3" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="PrecoVenda4" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="PrecoVenda5" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="TextoDesconto1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TextoDesconto2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TextoDesconto3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TextoDesconto4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TextoDesconto5" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GrelhaDesconto" nillable="true" type="tns:GrelhaDesconto" />
+</xs:schema>

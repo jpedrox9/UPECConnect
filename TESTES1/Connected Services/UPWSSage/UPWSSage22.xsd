@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model.Contabilidade" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model.Contabilidade" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="TipoMovimento">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Debito">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Credito">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TipoMovimento" nillable="true" type="tns:TipoMovimento" />
+  <xs:complexType name="ArrayOfContabilidadeMovimentosPorReferencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContabilidadeMovimentosPorReferencia" nillable="true" type="tns:ContabilidadeMovimentosPorReferencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContabilidadeMovimentosPorReferencia" nillable="true" type="tns:ArrayOfContabilidadeMovimentosPorReferencia" />
+  <xs:complexType name="ContabilidadeMovimentosPorReferencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Custo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DBTS" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="DataDoc" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Referencia" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContabilidadeMovimentosPorReferencia" nillable="true" type="tns:ContabilidadeMovimentosPorReferencia" />
+</xs:schema>

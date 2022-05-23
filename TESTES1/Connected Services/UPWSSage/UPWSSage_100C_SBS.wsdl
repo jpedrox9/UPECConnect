@@ -1,0 +1,1903 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UPWSSage_100C_SBS" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Docs" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model.TiposDocumento" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model.Documentos" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model.Contabilidade" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/UPID.API.NEXT" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model.AjudaCompra" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.TabelasLivres" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model.Artigos" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Sage" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model.Aplicacao" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model.Artigos.GrelhaDescontos" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model.Moradas" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/UPID.API.GA.WEBSAGE.Model" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model.Cliente" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model.LinhaPreco" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd20" namespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Medidas" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd21" namespace="http://schemas.datacontract.org/2004/07/UPID.API.GA.WEBSAGE" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd22" />
+      <xsd:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd23" namespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model.Fornecedor" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUPWSSage_ListaDetalheDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaDetalheDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaDetalheDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaDetalheDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaFamilias_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaFamilias" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaFamilias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaFamiliasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaSubFamilias_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaSubFamilias" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaSubFamilias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaSubFamiliasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaCodigosPostais_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaCodigosPostais" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaCodigosPostais_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaCodigosPostaisResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaArmazens_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaArmazens" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaArmazens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaArmazensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaTiposDocumentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaTiposDocumentos" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaTiposDocumentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaTiposDocumentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ValidarDocumentoEmPreparacao_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarDocumentoEmPreparacao" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ValidarDocumentoEmPreparacao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarDocumentoEmPreparacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_CustosCTBPorRef_InputMessage">
+    <wsdl:part name="parameters" element="tns:CustosCTBPorRef" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_CustosCTBPorRef_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CustosCTBPorRefResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ExisteArtigo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExisteArtigo" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ExisteArtigo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExisteArtigoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ExisteCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExisteCliente" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ExisteCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExisteClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ExisteFornecedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExisteFornecedor" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ExisteFornecedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExisteFornecedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_TestarAPI_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestarAPI" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_TestarAPI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestarAPIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_GetAplication_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAplication" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_GetAplication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaSeries_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaSeries" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaSeries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaSeriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaClientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaClientes" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaClientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaPendentes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPendentes" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaPendentes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPendentesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaAjudaCompra_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaAjudaCompra" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaAjudaCompra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaAjudaCompraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaGrupos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaGrupos" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaGrupos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaGruposResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaTabelasLivres_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaTabelasLivres" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaTabelasLivres_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaTabelasLivresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaArtigos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaArtigos" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaArtigos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaArtigosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaArtigosPaginacao_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaArtigosPaginacao" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaArtigosPaginacao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaArtigosPaginacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaCondComerciaisArtigoCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaCondComerciaisArtigoCliente" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaCondComerciaisArtigoCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaCondComerciaisArtigoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaImgArtigos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaImgArtigos" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaImgArtigos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaImgArtigosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaImgGrupos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaImgGrupos" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaImgGrupos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaImgGruposResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaImgFamilia_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaImgFamilia" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaImgFamilia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaImgFamiliaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaImgSubFamilia_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaImgSubFamilia" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaImgSubFamilia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaImgSubFamiliaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaGrelhaDescontos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaGrelhaDescontos" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaGrelhaDescontos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaGrelhaDescontosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaMoradasAlternativas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaMoradasAlternativas" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaMoradasAlternativas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaMoradasAlternativasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaLinhasPrecosArtigos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaLinhasPrecosArtigos" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaLinhasPrecosArtigos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaLinhasPrecosArtigosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_FinalizarDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinalizarDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_FinalizarDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinalizarDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ActualizarDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ActualizarDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_UpdateDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDocument" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_UpdateDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ConverterDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConverterDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ConverterDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConverterDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirDocumentoFinanceiro_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirDocumentoFinanceiro" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirDocumentoFinanceiro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirDocumentoFinanceiroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_AnularDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:AnularDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_AnularDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AnularDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_AnularArtigo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AnularArtigo" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_AnularArtigo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AnularArtigoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirContabilidade_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirContabilidade" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirContabilidade_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirContabilidadeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirUtilizadorSage_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirUtilizadorSage" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirUtilizadorSage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirUtilizadorSageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirCodigoPostal_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirCodigoPostal" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirCodigoPostal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirCodigoPostalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirBarcode_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirBarcode" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirBarcode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirBarcodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirLocalizacaoArtigo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirLocalizacaoArtigo" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirLocalizacaoArtigo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirLocalizacaoArtigoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirCliente" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_AtualizarCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarCliente" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_AtualizarCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirAjudaCompra_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirAjudaCompra" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirAjudaCompra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirAjudaCompraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirLinhaPreco_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirLinhaPreco" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirLinhaPreco_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirLinhaPrecoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirLinhasPrecos_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirLinhasPrecos" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirLinhasPrecos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirLinhasPrecosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirTipoMedidas_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirTipoMedidas" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirTipoMedidas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirTipoMedidasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_AnularCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:AnularCliente" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_AnularCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AnularClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_AnularFornecedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:AnularFornecedor" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_AnularFornecedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AnularFornecedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_AlterarEstadoCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarEstadoCliente" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_AlterarEstadoCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarEstadoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirFornecedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirFornecedor" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirFornecedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirFornecedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirArtigo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirArtigo" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirArtigo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirArtigoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirConfigCTB_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirConfigCTB" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirConfigCTB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirConfigCTBResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirUnidades_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirUnidades" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirUnidades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirUnidadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirMoeda_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirMoeda" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirMoeda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirMoedaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirListaGrupos_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirListaGrupos" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirListaGrupos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirListaGruposResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirArquivoDigitalDocumentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirArquivoDigitalDocumentos" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirArquivoDigitalDocumentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirArquivoDigitalDocumentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_AlterarCartazesArtigo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarCartazesArtigo" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_AlterarCartazesArtigo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarCartazesArtigoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_SatisfazerQuantidadesDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:SatisfazerQuantidadesDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_SatisfazerQuantidadesDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SatisfazerQuantidadesDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ArtigoLotesOuNumSerie_InputMessage">
+    <wsdl:part name="parameters" element="tns:ArtigoLotesOuNumSerie" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ArtigoLotesOuNumSerie_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ArtigoLotesOuNumSerieResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ObterLotesByArtigoArmazem_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterLotesByArtigoArmazem" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ObterLotesByArtigoArmazem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterLotesByArtigoArmazemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ObterQuantidadeMovLotes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterQuantidadeMovLotes" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ObterQuantidadeMovLotes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterQuantidadeMovLotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ObterNSerieByArtigoArmazem_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterNSerieByArtigoArmazem" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ObterNSerieByArtigoArmazem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterNSerieByArtigoArmazemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ObterUtilNumSerie_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterUtilNumSerie" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ObterUtilNumSerie_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterUtilNumSerieResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_LerDescricaoArtigo_InputMessage">
+    <wsdl:part name="parameters" element="tns:LerDescricaoArtigo" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_LerDescricaoArtigo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LerDescricaoArtigoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_AtualizarArtigo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarArtigo" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_AtualizarArtigo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarArtigoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirLote_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirLote" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_InserirLote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirLoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_LerCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:LerCliente" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_LerCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LerClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_LerConfiguracoesCTBCab_InputMessage">
+    <wsdl:part name="parameters" element="tns:LerConfiguracoesCTBCab" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_LerConfiguracoesCTBCab_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LerConfiguracoesCTBCabResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_LerCamposCTB_InputMessage">
+    <wsdl:part name="parameters" element="tns:LerCamposCTB" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_LerCamposCTB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LerCamposCTBResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_LerConfiguracoesLinhaCTB_InputMessage">
+    <wsdl:part name="parameters" element="tns:LerConfiguracoesLinhaCTB" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_LerConfiguracoesLinhaCTB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LerConfiguracoesLinhaCTBResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_LerArquivoDigital_InputMessage">
+    <wsdl:part name="parameters" element="tns:LerArquivoDigital" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_LerArquivoDigital_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LerArquivoDigitalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_LerObjectivo_InputMessage">
+    <wsdl:part name="parameters" element="tns:LerObjectivo" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_LerObjectivo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LerObjectivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_LerMovimentosCTB_InputMessage">
+    <wsdl:part name="parameters" element="tns:LerMovimentosCTB" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_LerMovimentosCTB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LerMovimentosCTBResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_LerDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:LerDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_LerDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LerDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaPaises_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPaises" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaPaises_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPaisesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_AtualizarBD_InputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarBD" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_AtualizarBD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarBDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_TiposDocumentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:TiposDocumentos" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_TiposDocumentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TiposDocumentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Sectores_InputMessage">
+    <wsdl:part name="parameters" element="tns:Sectores" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Sectores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SectoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Series_InputMessage">
+    <wsdl:part name="parameters" element="tns:Series" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Series_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SeriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Moedas_InputMessage">
+    <wsdl:part name="parameters" element="tns:Moedas" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Moedas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MoedasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_RegimeIva_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegimeIva" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_RegimeIva_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegimeIvaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Vendedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:Vendedor" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Vendedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VendedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_MeioPagamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:MeioPagamento" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_MeioPagamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MeioPagamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Armazens_InputMessage">
+    <wsdl:part name="parameters" element="tns:Armazens" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Armazens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ArmazensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Motivos_Isencao_InputMessage">
+    <wsdl:part name="parameters" element="tns:Motivos_Isencao" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Motivos_Isencao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Motivos_IsencaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Unidades_InputMessage">
+    <wsdl:part name="parameters" element="tns:Unidades" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Unidades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnidadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Paises_InputMessage">
+    <wsdl:part name="parameters" element="tns:Paises" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Paises_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PaisesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ZonasGeograficas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ZonasGeograficas" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ZonasGeograficas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ZonasGeograficasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ConfiguracoesCTB_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfiguracoesCTB" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ConfiguracoesCTB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfiguracoesCTBResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Artigos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Artigos" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Artigos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ArtigosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Documentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Documentos" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_Documentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DocumentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_DocumentosCTB_InputMessage">
+    <wsdl:part name="parameters" element="tns:DocumentosCTB" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_DocumentosCTB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DocumentosCTBResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaFornecedores_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaFornecedores" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaFornecedores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaFornecedoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaUnidades_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaUnidades" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaUnidades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaUnidadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaDocumentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaDocumentos" />
+  </wsdl:message>
+  <wsdl:message name="IUPWSSage_ListaDocumentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaDocumentosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUPWSSage">
+    <wsdl:operation name="ListaDetalheDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaDetalheDocumento" message="tns:IUPWSSage_ListaDetalheDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaDetalheDocumentoResponse" message="tns:IUPWSSage_ListaDetalheDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaFamilias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaFamilias" message="tns:IUPWSSage_ListaFamilias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaFamiliasResponse" message="tns:IUPWSSage_ListaFamilias_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaSubFamilias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaSubFamilias" message="tns:IUPWSSage_ListaSubFamilias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaSubFamiliasResponse" message="tns:IUPWSSage_ListaSubFamilias_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaCodigosPostais">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaCodigosPostais" message="tns:IUPWSSage_ListaCodigosPostais_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaCodigosPostaisResponse" message="tns:IUPWSSage_ListaCodigosPostais_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaArmazens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaArmazens" message="tns:IUPWSSage_ListaArmazens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaArmazensResponse" message="tns:IUPWSSage_ListaArmazens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaTiposDocumentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaTiposDocumentos" message="tns:IUPWSSage_ListaTiposDocumentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaTiposDocumentosResponse" message="tns:IUPWSSage_ListaTiposDocumentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarDocumentoEmPreparacao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ValidarDocumentoEmPreparacao" message="tns:IUPWSSage_ValidarDocumentoEmPreparacao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ValidarDocumentoEmPreparacaoResponse" message="tns:IUPWSSage_ValidarDocumentoEmPreparacao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CustosCTBPorRef">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/CustosCTBPorRef" message="tns:IUPWSSage_CustosCTBPorRef_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/CustosCTBPorRefResponse" message="tns:IUPWSSage_CustosCTBPorRef_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExisteArtigo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ExisteArtigo" message="tns:IUPWSSage_ExisteArtigo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ExisteArtigoResponse" message="tns:IUPWSSage_ExisteArtigo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExisteCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ExisteCliente" message="tns:IUPWSSage_ExisteCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ExisteClienteResponse" message="tns:IUPWSSage_ExisteCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExisteFornecedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ExisteFornecedor" message="tns:IUPWSSage_ExisteFornecedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ExisteFornecedorResponse" message="tns:IUPWSSage_ExisteFornecedor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestarAPI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/TestarAPI" message="tns:IUPWSSage_TestarAPI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/TestarAPIResponse" message="tns:IUPWSSage_TestarAPI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAplication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/GetAplication" message="tns:IUPWSSage_GetAplication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/GetAplicationResponse" message="tns:IUPWSSage_GetAplication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaSeries">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaSeries" message="tns:IUPWSSage_ListaSeries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaSeriesResponse" message="tns:IUPWSSage_ListaSeries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaClientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaClientes" message="tns:IUPWSSage_ListaClientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaClientesResponse" message="tns:IUPWSSage_ListaClientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaPendentes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaPendentes" message="tns:IUPWSSage_ListaPendentes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaPendentesResponse" message="tns:IUPWSSage_ListaPendentes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaAjudaCompra">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaAjudaCompra" message="tns:IUPWSSage_ListaAjudaCompra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaAjudaCompraResponse" message="tns:IUPWSSage_ListaAjudaCompra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaGrupos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaGrupos" message="tns:IUPWSSage_ListaGrupos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaGruposResponse" message="tns:IUPWSSage_ListaGrupos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaTabelasLivres">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaTabelasLivres" message="tns:IUPWSSage_ListaTabelasLivres_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaTabelasLivresResponse" message="tns:IUPWSSage_ListaTabelasLivres_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaArtigos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaArtigos" message="tns:IUPWSSage_ListaArtigos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaArtigosResponse" message="tns:IUPWSSage_ListaArtigos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaArtigosPaginacao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaArtigosPaginacao" message="tns:IUPWSSage_ListaArtigosPaginacao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaArtigosPaginacaoResponse" message="tns:IUPWSSage_ListaArtigosPaginacao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaCondComerciaisArtigoCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaCondComerciaisArtigoCliente" message="tns:IUPWSSage_ListaCondComerciaisArtigoCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaCondComerciaisArtigoClienteResponse" message="tns:IUPWSSage_ListaCondComerciaisArtigoCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaImgArtigos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaImgArtigos" message="tns:IUPWSSage_ListaImgArtigos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaImgArtigosResponse" message="tns:IUPWSSage_ListaImgArtigos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaImgGrupos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaImgGrupos" message="tns:IUPWSSage_ListaImgGrupos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaImgGruposResponse" message="tns:IUPWSSage_ListaImgGrupos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaImgFamilia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaImgFamilia" message="tns:IUPWSSage_ListaImgFamilia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaImgFamiliaResponse" message="tns:IUPWSSage_ListaImgFamilia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaImgSubFamilia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaImgSubFamilia" message="tns:IUPWSSage_ListaImgSubFamilia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaImgSubFamiliaResponse" message="tns:IUPWSSage_ListaImgSubFamilia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaGrelhaDescontos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaGrelhaDescontos" message="tns:IUPWSSage_ListaGrelhaDescontos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaGrelhaDescontosResponse" message="tns:IUPWSSage_ListaGrelhaDescontos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaMoradasAlternativas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaMoradasAlternativas" message="tns:IUPWSSage_ListaMoradasAlternativas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaMoradasAlternativasResponse" message="tns:IUPWSSage_ListaMoradasAlternativas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/Login" message="tns:IUPWSSage_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/LoginResponse" message="tns:IUPWSSage_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaLinhasPrecosArtigos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaLinhasPrecosArtigos" message="tns:IUPWSSage_ListaLinhasPrecosArtigos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaLinhasPrecosArtigosResponse" message="tns:IUPWSSage_ListaLinhasPrecosArtigos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/InserirDocumento" message="tns:IUPWSSage_InserirDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/InserirDocumentoResponse" message="tns:IUPWSSage_InserirDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinalizarDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/FinalizarDocumento" message="tns:IUPWSSage_FinalizarDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/FinalizarDocumentoResponse" message="tns:IUPWSSage_FinalizarDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ActualizarDocumento" message="tns:IUPWSSage_ActualizarDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ActualizarDocumentoResponse" message="tns:IUPWSSage_ActualizarDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/UpdateDocument" message="tns:IUPWSSage_UpdateDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/UpdateDocumentResponse" message="tns:IUPWSSage_UpdateDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConverterDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ConverterDocumento" message="tns:IUPWSSage_ConverterDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ConverterDocumentoResponse" message="tns:IUPWSSage_ConverterDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirDocumentoFinanceiro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/InserirDocumentoFinanceiro" message="tns:IUPWSSage_InserirDocumentoFinanceiro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/InserirDocumentoFinanceiroResponse" message="tns:IUPWSSage_InserirDocumentoFinanceiro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AnularDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/AnularDocumento" message="tns:IUPWSSage_AnularDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/AnularDocumentoResponse" message="tns:IUPWSSage_AnularDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AnularArtigo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/AnularArtigo" message="tns:IUPWSSage_AnularArtigo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/AnularArtigoResponse" message="tns:IUPWSSage_AnularArtigo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirContabilidade">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/InserirContabilidade" message="tns:IUPWSSage_InserirContabilidade_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/InserirContabilidadeResponse" message="tns:IUPWSSage_InserirContabilidade_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirUtilizadorSage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/InserirUtilizadorSage" message="tns:IUPWSSage_InserirUtilizadorSage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/InserirUtilizadorSageResponse" message="tns:IUPWSSage_InserirUtilizadorSage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirCodigoPostal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/InserirCodigoPostal" message="tns:IUPWSSage_InserirCodigoPostal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/InserirCodigoPostalResponse" message="tns:IUPWSSage_InserirCodigoPostal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirBarcode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/InserirBarcode" message="tns:IUPWSSage_InserirBarcode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/InserirBarcodeResponse" message="tns:IUPWSSage_InserirBarcode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirLocalizacaoArtigo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/InserirLocalizacaoArtigo" message="tns:IUPWSSage_InserirLocalizacaoArtigo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/InserirLocalizacaoArtigoResponse" message="tns:IUPWSSage_InserirLocalizacaoArtigo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/InserirCliente" message="tns:IUPWSSage_InserirCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/InserirClienteResponse" message="tns:IUPWSSage_InserirCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/AtualizarCliente" message="tns:IUPWSSage_AtualizarCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/AtualizarClienteResponse" message="tns:IUPWSSage_AtualizarCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirAjudaCompra">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/InserirAjudaCompra" message="tns:IUPWSSage_InserirAjudaCompra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/InserirAjudaCompraResponse" message="tns:IUPWSSage_InserirAjudaCompra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirLinhaPreco">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/InserirLinhaPreco" message="tns:IUPWSSage_InserirLinhaPreco_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/InserirLinhaPrecoResponse" message="tns:IUPWSSage_InserirLinhaPreco_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirLinhasPrecos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/InserirLinhasPrecos" message="tns:IUPWSSage_InserirLinhasPrecos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/InserirLinhasPrecosResponse" message="tns:IUPWSSage_InserirLinhasPrecos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirTipoMedidas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/InserirTipoMedidas" message="tns:IUPWSSage_InserirTipoMedidas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/InserirTipoMedidasResponse" message="tns:IUPWSSage_InserirTipoMedidas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AnularCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/AnularCliente" message="tns:IUPWSSage_AnularCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/AnularClienteResponse" message="tns:IUPWSSage_AnularCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AnularFornecedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/AnularFornecedor" message="tns:IUPWSSage_AnularFornecedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/AnularFornecedorResponse" message="tns:IUPWSSage_AnularFornecedor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarEstadoCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/AlterarEstadoCliente" message="tns:IUPWSSage_AlterarEstadoCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/AlterarEstadoClienteResponse" message="tns:IUPWSSage_AlterarEstadoCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirFornecedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/InserirFornecedor" message="tns:IUPWSSage_InserirFornecedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/InserirFornecedorResponse" message="tns:IUPWSSage_InserirFornecedor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirArtigo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/InserirArtigo" message="tns:IUPWSSage_InserirArtigo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/InserirArtigoResponse" message="tns:IUPWSSage_InserirArtigo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirConfigCTB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/InserirConfigCTB" message="tns:IUPWSSage_InserirConfigCTB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/InserirConfigCTBResponse" message="tns:IUPWSSage_InserirConfigCTB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirUnidades">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/InserirUnidades" message="tns:IUPWSSage_InserirUnidades_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/InserirUnidadesResponse" message="tns:IUPWSSage_InserirUnidades_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirMoeda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/InserirMoeda" message="tns:IUPWSSage_InserirMoeda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/InserirMoedaResponse" message="tns:IUPWSSage_InserirMoeda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirListaGrupos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/InserirListaGrupos" message="tns:IUPWSSage_InserirListaGrupos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/InserirListaGruposResponse" message="tns:IUPWSSage_InserirListaGrupos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirArquivoDigitalDocumentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/InserirArquivoDigitalDocumentos" message="tns:IUPWSSage_InserirArquivoDigitalDocumentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/InserirArquivoDigitalDocumentosResponse" message="tns:IUPWSSage_InserirArquivoDigitalDocumentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarCartazesArtigo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/AlterarCartazesArtigo" message="tns:IUPWSSage_AlterarCartazesArtigo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/AlterarCartazesArtigoResponse" message="tns:IUPWSSage_AlterarCartazesArtigo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SatisfazerQuantidadesDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/SatisfazerQuantidadesDocumento" message="tns:IUPWSSage_SatisfazerQuantidadesDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/SatisfazerQuantidadesDocumentoResponse" message="tns:IUPWSSage_SatisfazerQuantidadesDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ArtigoLotesOuNumSerie">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ArtigoLotesOuNumSerie" message="tns:IUPWSSage_ArtigoLotesOuNumSerie_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ArtigoLotesOuNumSerieResponse" message="tns:IUPWSSage_ArtigoLotesOuNumSerie_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterLotesByArtigoArmazem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ObterLotesByArtigoArmazem" message="tns:IUPWSSage_ObterLotesByArtigoArmazem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ObterLotesByArtigoArmazemResponse" message="tns:IUPWSSage_ObterLotesByArtigoArmazem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterQuantidadeMovLotes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ObterQuantidadeMovLotes" message="tns:IUPWSSage_ObterQuantidadeMovLotes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ObterQuantidadeMovLotesResponse" message="tns:IUPWSSage_ObterQuantidadeMovLotes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterNSerieByArtigoArmazem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ObterNSerieByArtigoArmazem" message="tns:IUPWSSage_ObterNSerieByArtigoArmazem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ObterNSerieByArtigoArmazemResponse" message="tns:IUPWSSage_ObterNSerieByArtigoArmazem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterUtilNumSerie">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ObterUtilNumSerie" message="tns:IUPWSSage_ObterUtilNumSerie_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ObterUtilNumSerieResponse" message="tns:IUPWSSage_ObterUtilNumSerie_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LerDescricaoArtigo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/LerDescricaoArtigo" message="tns:IUPWSSage_LerDescricaoArtigo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/LerDescricaoArtigoResponse" message="tns:IUPWSSage_LerDescricaoArtigo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarArtigo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/AtualizarArtigo" message="tns:IUPWSSage_AtualizarArtigo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/AtualizarArtigoResponse" message="tns:IUPWSSage_AtualizarArtigo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirLote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/InserirLote" message="tns:IUPWSSage_InserirLote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/InserirLoteResponse" message="tns:IUPWSSage_InserirLote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LerCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/LerCliente" message="tns:IUPWSSage_LerCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/LerClienteResponse" message="tns:IUPWSSage_LerCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LerConfiguracoesCTBCab">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/LerConfiguracoesCTBCab" message="tns:IUPWSSage_LerConfiguracoesCTBCab_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/LerConfiguracoesCTBCabResponse" message="tns:IUPWSSage_LerConfiguracoesCTBCab_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LerCamposCTB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/LerCamposCTB" message="tns:IUPWSSage_LerCamposCTB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/LerCamposCTBResponse" message="tns:IUPWSSage_LerCamposCTB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LerConfiguracoesLinhaCTB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/LerConfiguracoesLinhaCTB" message="tns:IUPWSSage_LerConfiguracoesLinhaCTB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/LerConfiguracoesLinhaCTBResponse" message="tns:IUPWSSage_LerConfiguracoesLinhaCTB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LerArquivoDigital">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/LerArquivoDigital" message="tns:IUPWSSage_LerArquivoDigital_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/LerArquivoDigitalResponse" message="tns:IUPWSSage_LerArquivoDigital_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LerObjectivo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/LerObjectivo" message="tns:IUPWSSage_LerObjectivo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/LerObjectivoResponse" message="tns:IUPWSSage_LerObjectivo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LerMovimentosCTB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/LerMovimentosCTB" message="tns:IUPWSSage_LerMovimentosCTB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/LerMovimentosCTBResponse" message="tns:IUPWSSage_LerMovimentosCTB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LerDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/LerDocumento" message="tns:IUPWSSage_LerDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/LerDocumentoResponse" message="tns:IUPWSSage_LerDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaPaises">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaPaises" message="tns:IUPWSSage_ListaPaises_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaPaisesResponse" message="tns:IUPWSSage_ListaPaises_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarBD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/AtualizarBD" message="tns:IUPWSSage_AtualizarBD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/AtualizarBDResponse" message="tns:IUPWSSage_AtualizarBD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposDocumentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/TiposDocumentos" message="tns:IUPWSSage_TiposDocumentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/TiposDocumentosResponse" message="tns:IUPWSSage_TiposDocumentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Sectores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/Sectores" message="tns:IUPWSSage_Sectores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/SectoresResponse" message="tns:IUPWSSage_Sectores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Series">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/Series" message="tns:IUPWSSage_Series_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/SeriesResponse" message="tns:IUPWSSage_Series_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Moedas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/Moedas" message="tns:IUPWSSage_Moedas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/MoedasResponse" message="tns:IUPWSSage_Moedas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegimeIva">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/RegimeIva" message="tns:IUPWSSage_RegimeIva_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/RegimeIvaResponse" message="tns:IUPWSSage_RegimeIva_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Vendedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/Vendedor" message="tns:IUPWSSage_Vendedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/VendedorResponse" message="tns:IUPWSSage_Vendedor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MeioPagamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/MeioPagamento" message="tns:IUPWSSage_MeioPagamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/MeioPagamentoResponse" message="tns:IUPWSSage_MeioPagamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Armazens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/Armazens" message="tns:IUPWSSage_Armazens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ArmazensResponse" message="tns:IUPWSSage_Armazens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Motivos_Isencao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/Motivos_Isencao" message="tns:IUPWSSage_Motivos_Isencao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/Motivos_IsencaoResponse" message="tns:IUPWSSage_Motivos_Isencao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Unidades">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/Unidades" message="tns:IUPWSSage_Unidades_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/UnidadesResponse" message="tns:IUPWSSage_Unidades_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Paises">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/Paises" message="tns:IUPWSSage_Paises_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/PaisesResponse" message="tns:IUPWSSage_Paises_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ZonasGeograficas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ZonasGeograficas" message="tns:IUPWSSage_ZonasGeograficas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ZonasGeograficasResponse" message="tns:IUPWSSage_ZonasGeograficas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfiguracoesCTB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ConfiguracoesCTB" message="tns:IUPWSSage_ConfiguracoesCTB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ConfiguracoesCTBResponse" message="tns:IUPWSSage_ConfiguracoesCTB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Artigos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/Artigos" message="tns:IUPWSSage_Artigos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ArtigosResponse" message="tns:IUPWSSage_Artigos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Documentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/Documentos" message="tns:IUPWSSage_Documentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/DocumentosResponse" message="tns:IUPWSSage_Documentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DocumentosCTB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/DocumentosCTB" message="tns:IUPWSSage_DocumentosCTB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/DocumentosCTBResponse" message="tns:IUPWSSage_DocumentosCTB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaFornecedores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaFornecedores" message="tns:IUPWSSage_ListaFornecedores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaFornecedoresResponse" message="tns:IUPWSSage_ListaFornecedores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaUnidades">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaUnidades" message="tns:IUPWSSage_ListaUnidades_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaUnidadesResponse" message="tns:IUPWSSage_ListaUnidades_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaDocumentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUPWSSage/ListaDocumentos" message="tns:IUPWSSage_ListaDocumentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUPWSSage/ListaDocumentosResponse" message="tns:IUPWSSage_ListaDocumentos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IUPWSSage" type="tns:IUPWSSage">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListaDetalheDocumento">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaDetalheDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaFamilias">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaFamilias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaSubFamilias">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaSubFamilias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaCodigosPostais">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaCodigosPostais" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaArmazens">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaArmazens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaTiposDocumentos">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaTiposDocumentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarDocumentoEmPreparacao">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ValidarDocumentoEmPreparacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustosCTBPorRef">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/CustosCTBPorRef" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExisteArtigo">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ExisteArtigo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExisteCliente">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ExisteCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExisteFornecedor">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ExisteFornecedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestarAPI">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/TestarAPI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAplication">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/GetAplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaSeries">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaSeries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaClientes">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaPendentes">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaPendentes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaAjudaCompra">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaAjudaCompra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaGrupos">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaGrupos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaTabelasLivres">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaTabelasLivres" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaArtigos">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaArtigos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaArtigosPaginacao">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaArtigosPaginacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaCondComerciaisArtigoCliente">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaCondComerciaisArtigoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaImgArtigos">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaImgArtigos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaImgGrupos">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaImgGrupos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaImgFamilia">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaImgFamilia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaImgSubFamilia">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaImgSubFamilia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaGrelhaDescontos">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaGrelhaDescontos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaMoradasAlternativas">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaMoradasAlternativas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaLinhasPrecosArtigos">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaLinhasPrecosArtigos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirDocumento">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/InserirDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinalizarDocumento">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/FinalizarDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDocumento">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ActualizarDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocument">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/UpdateDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConverterDocumento">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ConverterDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirDocumentoFinanceiro">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/InserirDocumentoFinanceiro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnularDocumento">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/AnularDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnularArtigo">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/AnularArtigo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirContabilidade">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/InserirContabilidade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirUtilizadorSage">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/InserirUtilizadorSage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirCodigoPostal">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/InserirCodigoPostal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirBarcode">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/InserirBarcode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirLocalizacaoArtigo">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/InserirLocalizacaoArtigo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirCliente">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/InserirCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarCliente">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/AtualizarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirAjudaCompra">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/InserirAjudaCompra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirLinhaPreco">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/InserirLinhaPreco" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirLinhasPrecos">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/InserirLinhasPrecos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirTipoMedidas">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/InserirTipoMedidas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnularCliente">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/AnularCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnularFornecedor">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/AnularFornecedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarEstadoCliente">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/AlterarEstadoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirFornecedor">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/InserirFornecedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirArtigo">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/InserirArtigo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirConfigCTB">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/InserirConfigCTB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirUnidades">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/InserirUnidades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirMoeda">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/InserirMoeda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirListaGrupos">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/InserirListaGrupos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirArquivoDigitalDocumentos">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/InserirArquivoDigitalDocumentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarCartazesArtigo">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/AlterarCartazesArtigo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SatisfazerQuantidadesDocumento">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/SatisfazerQuantidadesDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArtigoLotesOuNumSerie">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ArtigoLotesOuNumSerie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterLotesByArtigoArmazem">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ObterLotesByArtigoArmazem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterQuantidadeMovLotes">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ObterQuantidadeMovLotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterNSerieByArtigoArmazem">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ObterNSerieByArtigoArmazem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterUtilNumSerie">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ObterUtilNumSerie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LerDescricaoArtigo">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/LerDescricaoArtigo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarArtigo">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/AtualizarArtigo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirLote">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/InserirLote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LerCliente">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/LerCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LerConfiguracoesCTBCab">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/LerConfiguracoesCTBCab" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LerCamposCTB">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/LerCamposCTB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LerConfiguracoesLinhaCTB">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/LerConfiguracoesLinhaCTB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LerArquivoDigital">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/LerArquivoDigital" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LerObjectivo">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/LerObjectivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LerMovimentosCTB">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/LerMovimentosCTB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LerDocumento">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/LerDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaPaises">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaPaises" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarBD">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/AtualizarBD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposDocumentos">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/TiposDocumentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sectores">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/Sectores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Series">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/Series" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Moedas">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/Moedas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegimeIva">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/RegimeIva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Vendedor">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/Vendedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MeioPagamento">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/MeioPagamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Armazens">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/Armazens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Motivos_Isencao">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/Motivos_Isencao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Unidades">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/Unidades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Paises">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/Paises" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZonasGeograficas">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ZonasGeograficas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfiguracoesCTB">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ConfiguracoesCTB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Artigos">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/Artigos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Documentos">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/Documentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocumentosCTB">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/DocumentosCTB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaFornecedores">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaFornecedores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaUnidades">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaUnidades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaDocumentos">
+      <soap:operation soapAction="http://tempuri.org/IUPWSSage/ListaDocumentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UPWSSage_100C_SBS">
+    <wsdl:port name="BasicHttpBinding_IUPWSSage" binding="tns:BasicHttpBinding_IUPWSSage">
+      <soap:address location="http://wsap100c/UPWSSage.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model.Documentos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model.Documentos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE" />
+  <xs:complexType name="ArrayOfDocumentosPreparacao">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DocumentosPreparacao" nillable="true" type="tns:DocumentosPreparacao" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDocumentosPreparacao" nillable="true" type="tns:ArrayOfDocumentosPreparacao" />
+  <xs:complexType name="DocumentosPreparacao">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ano" type="xs:short" />
+      <xs:element minOccurs="0" name="Numero" type="xs:int" />
+      <xs:element minOccurs="0" name="SerieOriginal" type="xs:short" />
+      <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DocumentosPreparacao" nillable="true" type="tns:DocumentosPreparacao" />
+  <xs:complexType name="ArrayOfResultadoDocumentoEmPreparacao">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResultadoDocumentoEmPreparacao" nillable="true" type="tns:ResultadoDocumentoEmPreparacao" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResultadoDocumentoEmPreparacao" nillable="true" type="tns:ArrayOfResultadoDocumentoEmPreparacao" />
+  <xs:complexType name="ResultadoDocumentoEmPreparacao">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocumentoEmPreparacao" nillable="true" type="tns:DocumentosPreparacao" />
+      <xs:element minOccurs="0" name="NumeroDocFinal" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SerieFinal" nillable="true" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultadoDocumentoEmPreparacao" nillable="true" type="tns:ResultadoDocumentoEmPreparacao" />
+  <xs:complexType name="DocumentoFinalizar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ano" type="xs:short" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE" minOccurs="0" name="DadosSage" nillable="true" type="q1:DadosSageNext" />
+      <xs:element minOccurs="0" name="NumeroDocumento" type="xs:int" />
+      <xs:element minOccurs="0" name="Serie" type="xs:short" />
+      <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DocumentoFinalizar" nillable="true" type="tns:DocumentoFinalizar" />
+  <xs:complexType name="ArquivoDigital">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ano" type="xs:short" />
+      <xs:element minOccurs="0" name="DataDoc" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DocContents" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="DocSize" type="xs:int" />
+      <xs:element minOccurs="0" name="DocSource" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocThumbnail" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="DocType" type="xs:int" />
+      <xs:element minOccurs="0" name="IsPersonal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NumDoc" type="xs:int" />
+      <xs:element minOccurs="0" name="Serie" type="xs:short" />
+      <xs:element minOccurs="0" name="TipoDoc" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArquivoDigital" nillable="true" type="tns:ArquivoDigital" />
+  <xs:complexType name="ArrayOfFiltroTipoDoc">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FiltroTipoDoc" nillable="true" type="tns:FiltroTipoDoc" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFiltroTipoDoc" nillable="true" type="tns:ArrayOfFiltroTipoDoc" />
+  <xs:complexType name="FiltroTipoDoc">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Serie" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="TipoDoc" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FiltroTipoDoc" nillable="true" type="tns:FiltroTipoDoc" />
+</xs:schema>

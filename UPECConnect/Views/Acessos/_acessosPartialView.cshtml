@@ -1,0 +1,24 @@
+﻿@{
+    List<UPECConnect.Data.Models.Empresa> empresas = ViewBag.Acessos;
+}
+
+    <form asp-action="Mudar">
+        <div class="modal-header">
+            <h5 class="modal-title">Empresas</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+            <p>Escolha um Empresa</p>
+            <select name="empresaId" class="form-control">
+                <option disabled selected></option>
+                @foreach (var item in empresas)
+                {
+                    <option value="@item.Id">@item.Nome</option>
+                }
+            </select>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Confirmar</button>
+        </div>
+    </form>

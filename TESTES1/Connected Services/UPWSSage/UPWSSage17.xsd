@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Header">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Header" nillable="true" type="tns:Header" />
+  <xs:complexType name="ArrayOfArmazens">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Armazens" nillable="true" type="tns:Armazens" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArmazens" nillable="true" type="tns:ArrayOfArmazens" />
+  <xs:complexType name="Armazens">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Armazens" nillable="true" type="tns:Armazens" />
+  <xs:complexType name="ArrayOfFiltroCampoLivre">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FiltroCampoLivre" nillable="true" type="tns:FiltroCampoLivre" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFiltroCampoLivre" nillable="true" type="tns:ArrayOfFiltroCampoLivre" />
+  <xs:complexType name="FiltroCampoLivre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NrCampo" type="xs:short" />
+      <xs:element minOccurs="0" name="Valor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FiltroCampoLivre" nillable="true" type="tns:FiltroCampoLivre" />
+  <xs:complexType name="RespostaUtil">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataExpira" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Login" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Mensagem" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RespostaUtil" nillable="true" type="tns:RespostaUtil" />
+  <xs:complexType name="ArtigoUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BlocoNotas" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observacoes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PCompraCIVA" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PCompraSIVA" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PStandard" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PVP1SIVA" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PVP2SIVA" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PVP3SIVA" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArtigoUpdate" nillable="true" type="tns:ArtigoUpdate" />
+  <xs:complexType name="ArrayOfPais">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Pais" nillable="true" type="tns:Pais" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPais" nillable="true" type="tns:ArrayOfPais" />
+  <xs:complexType name="Pais">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Pais" nillable="true" type="tns:Pais" />
+</xs:schema>

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - E-SYNC</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/img/esync-icon.png" rel="icon" />
+    <style>
+        #open:hover {
+            color: lightgray;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar bg-dark navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow mb-2">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/esync-dark.png" alt="E-Sync Logo" width="70" /></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <div id="showmodal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div id="partial-view" data-url="@Url.Action(action: "_acessosPartialView", controller: "Acessos")"></div>
+            </div>
+        </div>
+    </div>
+    @if(ViewBag.link != null && ViewBag.empresa != null)
+    {
+        <footer class="border-top footer bg-dark navbar-dark">
+            <div class="container navbar-nav">
+                @if (ViewBag.link)
+                {
+                    <a id='open' class="nav-link" data-toggle="modal" data-target="#showmodal">@ViewBag.empresa</a>
+                }
+                else
+                {
+                    <p>@ViewBag.empresa</p>
+                }
+            </div>
+        </footer>
+    }
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        $(document).ready(function () {
+            (function () {
+                var url = $("#partial-view").data("url");
+                $("#partial-view").load(url);
+            })();
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

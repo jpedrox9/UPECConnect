@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model.TiposDocumento" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model.TiposDocumento" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="eTipoTerceiro">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Todos" />
+      <xs:enumeration value="Cliente" />
+      <xs:enumeration value="Fornecedor" />
+      <xs:enumeration value="Armazem" />
+      <xs:enumeration value="Sector" />
+      <xs:enumeration value="Cliente_Fornecedor" />
+      <xs:enumeration value="Clientes_Fornecedor_Armazem_Sector" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="eTipoTerceiro" nillable="true" type="tns:eTipoTerceiro" />
+  <xs:complexType name="ArrayOfTiposDocumento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TiposDocumento" nillable="true" type="tns:TiposDocumento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTiposDocumento" nillable="true" type="tns:ArrayOfTiposDocumento" />
+  <xs:complexType name="TiposDocumento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaGestao" type="xs:short" />
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DBTS" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Entidade" type="xs:short" />
+      <xs:element minOccurs="0" name="MovimentacaoStock" type="xs:short" />
+      <xs:element minOccurs="0" name="NatConta" type="xs:short" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="tns:ArrayOfSeries" />
+      <xs:element minOccurs="0" name="TipoOperacao" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TiposDocumento" nillable="true" type="tns:TiposDocumento" />
+  <xs:complexType name="ArrayOfSeries">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Series" nillable="true" type="tns:Series" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSeries" nillable="true" type="tns:ArrayOfSeries" />
+  <xs:complexType name="Series">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DBTS" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Inativa" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Serie" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Series" nillable="true" type="tns:Series" />
+  <xs:simpleType name="eTipoTerceiroMoradas">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Cliente" />
+      <xs:enumeration value="Fornecedor" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="eTipoTerceiroMoradas" nillable="true" type="tns:eTipoTerceiroMoradas" />
+</xs:schema>

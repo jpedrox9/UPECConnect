@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    List<UPECConnect.Data.Models.Empresa> empresas = ViewBag.Acessos;
+}
+
+<div class="row my-4">
+    <div class="col-6">
+        <h2>Empresas a que tem acesso</h2>
+    </div>
+    <div class="col-6 text-right">
+        <a asp-controller="Empresas" asp-action="Index" class="btn btn-outline-dark"><i class="fa-solid fa-gear"></i> Gerir Empresas</a>
+        <a asp-action="Search" class="btn btn-outline-primary">Acessar Nova Empresa</a>
+    </div>
+</div>
+
+@if(empresas.Count() != 0)
+{
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Sigla</th>
+                <th>Nome</th>
+                <th>Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in empresas)
+            {
+                <tr>
+                    <td>
+                        @item.Sigla
+                    </td>
+                    <td>
+                        @item.Nome
+                    </td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger mx-1">Sair</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Não tem acesso a nenhuma empresa</p>
+}

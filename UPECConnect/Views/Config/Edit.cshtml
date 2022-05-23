@@ -1,0 +1,110 @@
+﻿@model UPECConnect.Data.Models.Config
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<h1>Editar</h1>
+
+<hr />
+<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Upload</button><br />
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Faça upload do Ficheiro das Configurações</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <form asp-action="Upload" enctype="multipart/form-data" method="post">
+                <div class="modal-body">
+                    <input type="hidden" name="id" value="@Model.Empresa" />
+                    <input type="file" name="config" /><br /><br />
+                    <a asp-action="Template" asp-route-id="@Model.Empresa">Template do ficheiro</a>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-primary" value="Confirmar" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <input type="hidden" name="id" value="@Model.Empresa" />
+            <div class="form-group">
+                <label asp-for="TempoArranque" class="control-label"></label>
+                <input asp-for="TempoArranque" name="TempoArranque" class="form-control" />
+                <span asp-validation-for="TempoArranque" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Images_Path" class="control-label"></label>
+                <input asp-for="Images_Path" name="Images_Path" class="form-control" />
+                <span asp-validation-for="Images_Path" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Logs_Path" class="control-label"></label>
+                <input asp-for="Logs_Path" name="Logs_Path" class="form-control" />
+                <span asp-validation-for="Logs_Path" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="URL" class="control-label"></label>
+                <input asp-for="URL" name="URL" class="form-control" />
+                <span asp-validation-for="URL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Token" class="control-label"></label>
+                <input asp-for="Token" name="Token" class="form-control" />
+                <span asp-validation-for="Token" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Servidor" class="control-label"></label>
+                <input asp-for="Servidor" name="Servidor" class="form-control" />
+                <span asp-validation-for="Servidor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BaseDados" class="control-label"></label>
+                <input asp-for="BaseDados" name="BaseDados" class="form-control" />
+                <span asp-validation-for="BaseDados" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Utilizador" class="control-label"></label>
+                <input asp-for="Utilizador" name="Utilizador" class="form-control" />
+                <span asp-validation-for="Utilizador" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WebService" class="control-label"></label>
+                <input asp-for="WebService" name="WebService" class="form-control" />
+                <span asp-validation-for="WebService" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoDoc" class="control-label"></label>
+                <input asp-for="TipoDoc" name="TipoDoc" class="form-control" />
+                <span asp-validation-for="TipoDoc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Serie" class="control-label"></label>
+                <input asp-for="Serie" name="Serie" class="form-control" />
+                <span asp-validation-for="Serie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Setor" class="control-label"></label>
+                <input asp-for="Setor" name="Setor" class="form-control" />
+                <span asp-validation-for="Setor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-danger">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

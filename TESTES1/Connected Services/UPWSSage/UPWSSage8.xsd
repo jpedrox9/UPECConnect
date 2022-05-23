@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/UPID.API.GA.WEBSAGE.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UPID.API.GA.WEBSAGE.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="GADocumento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ano" type="xs:short" />
+      <xs:element minOccurs="0" name="Conf" nillable="true" type="tns:GAConfiguracoes" />
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Diario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Linhas" nillable="true" type="tns:ArrayOfGALinha" />
+      <xs:element minOccurs="0" name="Natureza" type="tns:GAeNatureza" />
+      <xs:element minOccurs="0" name="Numero" type="xs:int" />
+      <xs:element minOccurs="0" name="NumeroDiario" type="xs:int" />
+      <xs:element minOccurs="0" name="Sector" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Serie" type="xs:short" />
+      <xs:element minOccurs="0" name="StatusAcumulado" type="tns:GAeStatusAcumulado" />
+      <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GADocumento" nillable="true" type="tns:GADocumento" />
+  <xs:complexType name="GAConfiguracoes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LerConfiguracoes" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GAConfiguracoes" nillable="true" type="tns:GAConfiguracoes" />
+  <xs:complexType name="ArrayOfGALinha">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GALinha" nillable="true" type="tns:GALinha" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGALinha" nillable="true" type="tns:ArrayOfGALinha" />
+  <xs:complexType name="GALinha">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CentroCusto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoIVA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Conta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Contribuinte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Custeio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descritivo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MovimentacaoIVA" type="tns:GAeMovimentacaoIVA" />
+      <xs:element minOccurs="0" name="Rubrica" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Terceiro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoMovimento" type="tns:GAeTipoMovimentacao" />
+      <xs:element minOccurs="0" name="TipoTerceiro" type="tns:GAeTipoTerceiro" />
+      <xs:element minOccurs="0" name="Valor" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GALinha" nillable="true" type="tns:GALinha" />
+  <xs:simpleType name="GAeMovimentacaoIVA">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Nao" />
+      <xs:enumeration value="ValorBase" />
+      <xs:enumeration value="IVA" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GAeMovimentacaoIVA" nillable="true" type="tns:GAeMovimentacaoIVA" />
+  <xs:simpleType name="GAeTipoMovimentacao">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Debito" />
+      <xs:enumeration value="Credito" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GAeTipoMovimentacao" nillable="true" type="tns:GAeTipoMovimentacao" />
+  <xs:simpleType name="GAeTipoTerceiro">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Nao_Aplicavel" />
+      <xs:enumeration value="Fornecedor" />
+      <xs:enumeration value="Cliente" />
+      <xs:enumeration value="Tesouraria" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GAeTipoTerceiro" nillable="true" type="tns:GAeTipoTerceiro" />
+  <xs:simpleType name="GAeNatureza">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Abertura">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Normal">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Regularizações">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Apuramentos">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Fecho">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GAeNatureza" nillable="true" type="tns:GAeNatureza" />
+  <xs:simpleType name="GAeStatusAcumulado">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Suspensos">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Efectivos">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Extra_Contabilisticos">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Excluidos">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GAeStatusAcumulado" nillable="true" type="tns:GAeStatusAcumulado" />
+  <xs:complexType name="GAResultado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Documento" nillable="true" type="tns:GADocumentoGerado" />
+      <xs:element minOccurs="0" name="Gravou" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UltimaMensagem" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GAResultado" nillable="true" type="tns:GAResultado" />
+  <xs:complexType name="GADocumentoGerado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Diario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroDiario" type="xs:int" />
+      <xs:element minOccurs="0" name="NumeroDoc" type="xs:int" />
+      <xs:element minOccurs="0" name="Sector" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Serie" type="xs:short" />
+      <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GADocumentoGerado" nillable="true" type="tns:GADocumentoGerado" />
+</xs:schema>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.TabelasLivres" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.TabelasLivres" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="eTipoTabela">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TabelaLivre1" />
+      <xs:enumeration value="TabelaLivre2" />
+      <xs:enumeration value="TabelaLivre3" />
+      <xs:enumeration value="TabelaLivre4" />
+      <xs:enumeration value="TabelaLivre5" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="eTipoTabela" nillable="true" type="tns:eTipoTabela" />
+  <xs:complexType name="TabelasLivres">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Config" nillable="true" type="tns:Configuracoes" />
+      <xs:element minOccurs="0" name="Linhas" nillable="true" type="tns:ArrayOfLinhasTBLivre" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TabelasLivres" nillable="true" type="tns:TabelasLivres" />
+  <xs:complexType name="Configuracoes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoTexto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescricaoTexto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Titulo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Configuracoes" nillable="true" type="tns:Configuracoes" />
+  <xs:complexType name="ArrayOfLinhasTBLivre">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LinhasTBLivre" nillable="true" type="tns:LinhasTBLivre" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLinhasTBLivre" nillable="true" type="tns:ArrayOfLinhasTBLivre" />
+  <xs:complexType name="LinhasTBLivre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LinhasTBLivre" nillable="true" type="tns:LinhasTBLivre" />
+</xs:schema>

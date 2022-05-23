@@ -1,0 +1,177 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    List<UPECConnect.Data.Models.Logs> logs = ViewBag.Logs;
+    List<UPECConnect.Controllers.HomeController.Grafico> artGraf = ViewBag.ArtGraf;
+    List<UPECConnect.Controllers.HomeController.Grafico> cliGraf = ViewBag.CliGraf;
+    List<UPECConnect.Controllers.HomeController.Grafico> encGraf = ViewBag.EncGraf;
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+<div class="text-center">
+    @if (ViewBag.empresa != null)
+    {
+        <h1 class="display-4">@ViewBag.empresa</h1><br />
+        <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="logs-tab" data-toggle="tab" href="#logs" role="tab" aria-controls="logs" aria-selected="true">Logs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="artGraf-tab" data-toggle="tab" href="#artGraf" role="tab" aria-controls="artGraf" aria-selected="false">Artigos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="cliGraf-tab" data-toggle="tab" href="#cliGraf" role="tab" aria-controls="cliGraf" aria-selected="false">Clientes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="encGraf-tab" data-toggle="tab" href="#encGraf" role="tab" aria-controls="encGraf" aria-selected="false">Encomendas</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active text-center m-1" id="logs" role="tabpanel" aria-labelledby="logs-tab">
+                @if (logs.Count() != 0)
+                {
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Sincronizado</th>
+                                <th>Código Base de Dados</th>
+                                <th>Código Site</th>
+                                <th>Data</th>
+                                <th>Descrição</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in logs)
+                            {
+                                <tr>
+                                    <td>@item.Sincronizado</td>
+                                    <td>@item.Codigo_BD</td>
+                                    <td>@item.Codigo_Site</td>
+                                    <td>@item.Data</td>
+                                    <td>@item.Descricao</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <p>Ainda não existem logs registados.</p>
+                }
+            </div>
+            <div class="tab-pane fade text-center m-1" id="artGraf" role="tabpanel" aria-labelledby="artGraf-tab">
+                <canvas id="Artigos" style="width:100%;max-width:600px;margin:auto;"></canvas>
+            </div>
+            <div class="tab-pane fade text-center m-1" id="cliGraf" role="tabpanel" aria-labelledby="cliGraf-tab">
+                <canvas id="Clientes" style="width:100%;max-width:600px;margin:auto;"></canvas>
+            </div>
+            <div class="tab-pane fade text-center m-1" id="encGraf" role="tabpanel" aria-labelledby="encGraf-tab">
+                <canvas id="Encomendas" style="width:100%;max-width:600px;margin:auto;"></canvas>
+            </div>
+        </div>
+    }
+    else
+    {
+        <p>Ainda não acesso a nenhuma empresa.</p>
+    }
+</div>
+
+@if (artGraf != null && cliGraf != null && encGraf != null)
+{
+    <script>
+        var xValues = ["@artGraf[0].Data", "@artGraf[1].Data", "@artGraf[2].Data", "@artGraf[3].Data", "@artGraf[4].Data", "@artGraf[5].Data", "@artGraf[6].Data", "@artGraf[7].Data", "Ontem", "Hoje"];
+        var yValues = [@artGraf[0].Quantidade, @artGraf[1].Quantidade, @artGraf[2].Quantidade, @artGraf[3].Quantidade, @artGraf[4].Quantidade, @artGraf[5].Quantidade, @artGraf[6].Quantidade, @artGraf[7].Quantidade, @artGraf[8].Quantidade, @artGraf[9].Quantidade];
+
+        var barColors = "red";
+
+        new Chart("Artigos", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: "Artigos sincronizados nos últimos 10 dias"
+                },
+                scales: {
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            beginAtZero: true,
+                            callback: function (value) { if (value % 1 === 0) { return value; } }
+                        }
+                    }]
+                }
+            }
+        });
+
+        var xValues = ["@cliGraf[0].Data", "@cliGraf[1].Data", "@cliGraf[2].Data", "@cliGraf[3].Data", "@cliGraf[4].Data", "@cliGraf[5].Data", "@cliGraf[6].Data", "@cliGraf[7].Data", "Ontem", "Hoje"];
+        var yValues = [@cliGraf[0].Quantidade, @cliGraf[1].Quantidade, @cliGraf[2].Quantidade, @cliGraf[3].Quantidade, @cliGraf[4].Quantidade, @cliGraf[5].Quantidade, @cliGraf[6].Quantidade, @cliGraf[7].Quantidade, @cliGraf[8].Quantidade, @cliGraf[9].Quantidade];
+
+        var barColors = "red";
+
+        new Chart("Clientes", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: "Clientes sincronizados nos últimos 10 dias"
+                },
+                scales: {
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            beginAtZero: true,
+                            callback: function (value) { if (value % 1 === 0) { return value; } }
+                        }
+                    }]
+                }
+            }
+        });
+
+        var xValues = ["@encGraf[0].Data", "@encGraf[1].Data", "@encGraf[2].Data", "@encGraf[3].Data", "@encGraf[4].Data", "@encGraf[5].Data", "@encGraf[6].Data", "@encGraf[7].Data", "Ontem", "Hoje"];
+        var yValues = [@encGraf[0].Quantidade, @encGraf[1].Quantidade, @encGraf[2].Quantidade, @encGraf[3].Quantidade, @encGraf[4].Quantidade, @encGraf[5].Quantidade, @encGraf[6].Quantidade, @encGraf[7].Quantidade, @encGraf[8].Quantidade, @encGraf[9].Quantidade];
+
+        var barColors = "red";
+
+        new Chart("Encomendas", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: "Encomendas sincronizadas nos últimos 10 dias"
+                },
+                scales: {
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            beginAtZero: true,
+                            callback: function (value) { if (value % 1 === 0) { return value; } }
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+}

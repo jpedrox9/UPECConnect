@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/UPID.API.GA.WEBSAGE" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UPID.API.GA.WEBSAGE" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/UPID.API.GA.WEBSAGE.Model" />
+  <xs:complexType name="ConfiguracoesCTB.DadosCab">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Diario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Linhas" nillable="true" type="tns:ArrayOfConfiguracoesCTB.Linhas" />
+      <xs:element minOccurs="0" name="Sector" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Serie" type="xs:short" />
+      <xs:element minOccurs="0" name="TipoDoc" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConfiguracoesCTB.DadosCab" nillable="true" type="tns:ConfiguracoesCTB.DadosCab" />
+  <xs:complexType name="ArrayOfConfiguracoesCTB.Linhas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConfiguracoesCTB.Linhas" nillable="true" type="tns:ConfiguracoesCTB.Linhas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConfiguracoesCTB.Linhas" nillable="true" type="tns:ArrayOfConfiguracoesCTB.Linhas" />
+  <xs:complexType name="ConfiguracoesCTB.Linhas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CentroCusto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoIVA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Conta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Custeio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescrConta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescricaoTPDOC" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/UPID.API.GA.WEBSAGE.Model" minOccurs="0" name="MovimentacaoIVA" type="q1:GAeMovimentacaoIVA" />
+      <xs:element minOccurs="0" name="NContribuinte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Numlinha" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="Rubrica" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SinalCT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Terceiro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoTabUtilizada" nillable="true" type="tns:ArrayOfConfiguracoesCTB.eTipo" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/UPID.API.GA.WEBSAGE.Model" minOccurs="0" name="TipoTerceiro" type="q2:GAeTipoTerceiro" />
+      <xs:element minOccurs="0" name="Valor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConfiguracoesCTB.Linhas" nillable="true" type="tns:ConfiguracoesCTB.Linhas" />
+  <xs:complexType name="ArrayOfConfiguracoesCTB.eTipo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConfiguracoesCTB.eTipo" type="tns:ConfiguracoesCTB.eTipo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConfiguracoesCTB.eTipo" nillable="true" type="tns:ArrayOfConfiguracoesCTB.eTipo" />
+  <xs:simpleType name="ConfiguracoesCTB.eTipo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Cabecalho" />
+      <xs:enumeration value="Linhas" />
+      <xs:enumeration value="CentroCusto" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ConfiguracoesCTB.eTipo" nillable="true" type="tns:ConfiguracoesCTB.eTipo" />
+  <xs:complexType name="ConfiguracoesCTB.Resultado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Gerou" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UltimaMensagem" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConfiguracoesCTB.Resultado" nillable="true" type="tns:ConfiguracoesCTB.Resultado" />
+</xs:schema>

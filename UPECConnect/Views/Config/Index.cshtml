@@ -1,0 +1,230 @@
+﻿@{
+    ViewData["Title"] = "Details";
+    List<UPECConnect.Data.Models.Empresa> empresas = ViewBag.empresas;
+}
+
+<style>
+    .nowrap {
+        white-space: nowrap;
+    }
+</style>
+
+<h1>Detalhes</h1>
+<hr />
+<div class="d-flex align-items-stretch m-3">
+    <div class="nav flex-column nav-pills mr-4" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        @{int i = 0;
+            foreach (var item in empresas)
+            {
+                if (i == 0)
+                {
+                    <a class="nav-link nowrap active" id="@item.Id-tab" data-toggle="pill" href="#emp_@item.Id" role="tab" aria-controls="emp_@item.Id" aria-selected="true">@item.Nome</a>
+                }
+                else
+                {
+                    <a class="nav-link nowrap" id="@item.Id-tab" data-toggle="pill" href="#emp_@item.Id" role="tab" aria-controls="emp_@item.Id" aria-selected="true">@item.Nome</a>
+                }
+                i++;
+            }
+        }
+    </div>
+    <div class="tab-content" id="v-pills-tabContent">
+        @{i = 0;
+            foreach (var item in empresas)
+            {
+                UPECConnect.Data.Models.Config config = UPECConnect.Data.Models.Config.GetConfig(item.Id, ViewBag.conn);
+                if (i == 0)
+                {
+                    <div class="tab-pane fade show active" id="emp_@item.Id" role="tabpanel" aria-labelledby="emp_@item.Id-tab">
+                        @if (config.Empresa == 0)
+                        {
+                            <p>Ainda não tem configurações definidas para esta empresa. <a asp-action="Create" asp-route-id="@item.Id">Criar registo de configurações</a></p>
+                            <div>
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-danger">Voltar</a>
+                            </div>
+                        }
+                        else
+                        {
+                            <dl class="row">
+                                <dt class="col-sm-2">
+                                    Tempo de Arranque
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.TempoArranque minutos
+                                </dd>
+                                <dt class="col-sm-2">
+                                    Pasta das Imagens
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.Images_Path
+                                </dd>
+                                <dt class="col-sm-2">
+                                    Pasta dos Logs
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.Logs_Path
+                                </dd>
+                                <dt class="col-sm-2">
+                                    URL do Site
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.URL
+                                </dd>
+                                <dt class="col-sm-2">
+                                    Token ou Key
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.Token
+                                </dd>
+                                <dt class="col-sm-2">
+                                    Servidor
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.Servidor
+                                </dd>
+                                <dt class="col-sm-2">
+                                    Base de Dados
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.BaseDados
+                                </dd>
+                                <dt class="col-sm-2">
+                                    Utilizador
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.Utilizador
+                                </dd>
+                                <dt class="col-sm-2">
+                                    Web Service
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.WebService
+                                </dd>
+                                <dt class="col-sm-2">
+                                    Tipo de Documento
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.TipoDoc
+                                </dd>
+                                <dt class="col-sm-2">
+                                    Série
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.Serie
+                                </dd>
+                                <dt class="col-sm-2">
+                                    Setor
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.Setor
+                                </dd>
+                            </dl>
+                            <a asp-action="Password" asp-route-id="@item.Id">Alterar palavra-passe da base de dados</a><hr />
+                            <div>
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a>
+                                <a asp-action="Download" asp-route-id="@item.Id" class="btn btn-success">Download</a>
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-danger">Voltar</a>
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <div class="tab-pane fade" id="emp_@item.Id" role="tabpanel" aria-labelledby="emp_@item.Id-tab">
+                        @if (config.Empresa == 0)
+                        {
+                            <p>Ainda não tem configurações definidas para esta empresa. <a asp-action="Create" asp-route-id="@item.Id">Criar registo de configurações</a></p>
+                            <div>
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-danger">Voltar</a>
+                            </div>
+                        }
+                        else
+                        {
+                            <dl class="row">
+                                <dt class="col-sm-2">
+                                    Tempo de Arranque
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.TempoArranque minutos
+                                </dd>
+                                <dt class="col-sm-2">
+                                    Pasta das Imagens
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.Images_Path
+                                </dd>
+                                <dt class="col-sm-2">
+                                    Pasta dos Logs
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.Logs_Path
+                                </dd>
+                                <dt class="col-sm-2">
+                                    URL do Site
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.URL
+                                </dd>
+                                <dt class="col-sm-2">
+                                    Token ou Key
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.Token
+                                </dd>
+                                <dt class="col-sm-2">
+                                    Servidor
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.Servidor
+                                </dd>
+                                <dt class="col-sm-2">
+                                    Base de Dados
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.BaseDados
+                                </dd>
+                                <dt class="col-sm-2">
+                                    Utilizador
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.Utilizador
+                                </dd>
+                                <dt class="col-sm-2">
+                                    Web Service
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.WebService
+                                </dd>
+                                <dt class="col-sm-2">
+                                    Tipo de Documento
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.TipoDoc
+                                </dd>
+                                <dt class="col-sm-2">
+                                    Série
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.Serie
+                                </dd>
+                                <dt class="col-sm-2">
+                                    Setor
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @config.Setor
+                                </dd>
+                            </dl>
+                            <a asp-action="Password" asp-route-id="@item.Id">Alterar palavra-passe da base de dados</a><hr />
+                            <div>
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a>
+                                <a asp-action="Download" asp-route-id="@item.Id" class="btn btn-success">Download</a>
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-danger">Voltar</a>
+                            </div>
+                        }
+                    </div>
+                }
+                i++;
+            }
+        }
+    </div>
+</div>

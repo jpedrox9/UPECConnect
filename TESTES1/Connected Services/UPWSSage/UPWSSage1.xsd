@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model.Artigos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model.Artigos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="eOrdenacao">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CampoLivre1" />
+      <xs:enumeration value="CampoLivre2" />
+      <xs:enumeration value="CampoLivre3" />
+      <xs:enumeration value="CampoLivre4" />
+      <xs:enumeration value="CampoLivre5" />
+      <xs:enumeration value="CampoLivre6" />
+      <xs:enumeration value="CampoLivre7" />
+      <xs:enumeration value="CampoLivre8" />
+      <xs:enumeration value="CampoLivre9" />
+      <xs:enumeration value="CampoLivre10" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="eOrdenacao" nillable="true" type="tns:eOrdenacao" />
+  <xs:complexType name="ArrayOfImagensGrupos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ImagensGrupos" nillable="true" type="tns:ImagensGrupos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfImagensGrupos" nillable="true" type="tns:ArrayOfImagensGrupos" />
+  <xs:complexType name="ImagensGrupos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Extensao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Grupo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Imagem" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImagensGrupos" nillable="true" type="tns:ImagensGrupos" />
+  <xs:complexType name="ArrayOfImagensFamilias">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ImagensFamilias" nillable="true" type="tns:ImagensFamilias" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfImagensFamilias" nillable="true" type="tns:ArrayOfImagensFamilias" />
+  <xs:complexType name="ImagensFamilias">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ImagensGrupos">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Familia" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ImagensFamilias" nillable="true" type="tns:ImagensFamilias" />
+  <xs:complexType name="ArrayOfImagensSubFamilias">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ImagensSubFamilias" nillable="true" type="tns:ImagensSubFamilias" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfImagensSubFamilias" nillable="true" type="tns:ArrayOfImagensSubFamilias" />
+  <xs:complexType name="ImagensSubFamilias">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ImagensFamilias">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SubFamilia" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ImagensSubFamilias" nillable="true" type="tns:ImagensSubFamilias" />
+</xs:schema>

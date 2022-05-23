@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Docs" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Docs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfChaves">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Chaves" nillable="true" type="tns:Chaves" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChaves" nillable="true" type="tns:ArrayOfChaves" />
+  <xs:complexType name="Chaves">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ano" type="xs:short" />
+      <xs:element minOccurs="0" name="NumeroDoc" type="xs:int" />
+      <xs:element minOccurs="0" name="Serie" type="xs:short" />
+      <xs:element minOccurs="0" name="TipoDoc" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Chaves" nillable="true" type="tns:Chaves" />
+  <xs:complexType name="ArrayOfDocumentoCab">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DocumentoCab" nillable="true" type="tns:DocumentoCab" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDocumentoCab" nillable="true" type="tns:ArrayOfDocumentoCab" />
+  <xs:complexType name="DocumentoCab">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ano" type="xs:short" />
+      <xs:element minOccurs="0" name="Contribuinte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DadosTerceiro" nillable="true" type="tns:Terceiro" />
+      <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataCriacao" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataModificacao" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DescontoCab" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DocAprovado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EstadoDoc" type="tns:EstadoDoc" />
+      <xs:element minOccurs="0" name="IvaIncluido" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Linhas" nillable="true" type="tns:ArrayOfDocumentoLinhas" />
+      <xs:element minOccurs="0" name="MeioPagamengo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Moeda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroDocumento" type="xs:int" />
+      <xs:element minOccurs="0" name="Observacoes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Processo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegimeIva" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sector" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Serie" type="xs:short" />
+      <xs:element minOccurs="0" name="Terceiro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransporteDescarga" nillable="true" type="tns:TransporteDescarga" />
+      <xs:element minOccurs="0" name="Vendedor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VossoNumero" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DocumentoCab" nillable="true" type="tns:DocumentoCab" />
+  <xs:complexType name="Terceiro">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoPostal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Localidade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Morada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Morada2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pais" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Terceiro" nillable="true" type="tns:Terceiro" />
+  <xs:simpleType name="EstadoDoc">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Anulada">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Aberta">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ParcialmenteSatisfeita">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Satisfeita">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EstadoDoc" nillable="true" type="tns:EstadoDoc" />
+  <xs:complexType name="ArrayOfDocumentoLinhas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DocumentoLinhas" nillable="true" type="tns:DocumentoLinhas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDocumentoLinhas" nillable="true" type="tns:ArrayOfDocumentoLinhas" />
+  <xs:complexType name="DocumentoLinhas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Armazem" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Artigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumLinha" type="xs:short" />
+      <xs:element minOccurs="0" name="PrecoUnit" type="xs:double" />
+      <xs:element minOccurs="0" name="Quantidade" type="xs:double" />
+      <xs:element minOccurs="0" name="QuantidadeOriginal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TaxaDesconto" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DocumentoLinhas" nillable="true" type="tns:DocumentoLinhas" />
+  <xs:complexType name="TransporteDescarga">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodPostal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Localidade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Morada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pais" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransporteDescarga" nillable="true" type="tns:TransporteDescarga" />
+</xs:schema>

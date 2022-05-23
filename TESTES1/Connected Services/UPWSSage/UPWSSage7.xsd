@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Medidas" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Medidas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfTipoMedida">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoMedida" nillable="true" type="tns:TipoMedida" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoMedida" nillable="true" type="tns:ArrayOfTipoMedida" />
+  <xs:complexType name="TipoMedida">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Medidas" nillable="true" type="tns:ArrayOfMedidas" />
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoMedida" nillable="true" type="tns:TipoMedida" />
+  <xs:complexType name="ArrayOfMedidas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Medidas" nillable="true" type="tns:Medidas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMedidas" nillable="true" type="tns:ArrayOfMedidas" />
+  <xs:complexType name="Medidas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Medida" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Posicao" nillable="true" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Medidas" nillable="true" type="tns:Medidas" />
+</xs:schema>

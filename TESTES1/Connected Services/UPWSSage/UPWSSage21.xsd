@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model.Artigos.GrelhaDescontos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UPID.API.WEBSAGE.Model.Artigos.GrelhaDescontos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://wsap100c/UPWSSage.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfCabecalho">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cabecalho" nillable="true" type="tns:Cabecalho" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCabecalho" nillable="true" type="tns:ArrayOfCabecalho" />
+  <xs:complexType name="Cabecalho">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Artigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ativo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ClassDesconto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataFim" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataInicio" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DescontoCab" nillable="true" type="tns:DescontoCab" />
+      <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Familia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Grupo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Linhas" nillable="true" type="tns:ArrayOfLinhas" />
+      <xs:element minOccurs="0" name="SubFamilia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoCalculo" nillable="true" type="tns:TipoCalculo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cabecalho" nillable="true" type="tns:Cabecalho" />
+  <xs:simpleType name="DescontoCab">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Usa">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Complemento">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NaoPermite">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DescontoCab" nillable="true" type="tns:DescontoCab" />
+  <xs:complexType name="ArrayOfLinhas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Linhas" nillable="true" type="tns:Linhas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLinhas" nillable="true" type="tns:ArrayOfLinhas" />
+  <xs:complexType name="Linhas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bonus" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Desconto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimiteInferior" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Linhas" nillable="true" type="tns:Linhas" />
+  <xs:simpleType name="TipoCalculo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Quantidade" />
+      <xs:enumeration value="Valor" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TipoCalculo" nillable="true" type="tns:TipoCalculo" />
+</xs:schema>

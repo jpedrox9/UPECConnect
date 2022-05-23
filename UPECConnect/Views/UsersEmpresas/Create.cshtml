@@ -1,0 +1,38 @@
+﻿@model UPECConnect.Data.Models.Empresa
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Insira a Palavra-Passe</h1>
+
+@if (ViewBag.erro == 1)
+{
+    <div class="alert alert-danger" role="alert">
+        A palavra-passe está errada!
+    </div>
+}
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Palavra-Passe</label>
+                <input asp-for="Password" type="password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Confirmar" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-danger">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

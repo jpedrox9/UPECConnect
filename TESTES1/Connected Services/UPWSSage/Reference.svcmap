@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cb7d868b-bf13-41f8-b71e-7db2b8084280" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://wsap100c/UPWSSage.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UPWSSage.xsd" MetadataType="Schema" ID="e52ec8ca-2700-4ba4-aa0b-7894f49e88ce" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd14" />
+    <MetadataFile FileName="UPWSSage1.xsd" MetadataType="Schema" ID="966cdf76-43af-4be3-a12d-f2d890aa5693" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd12" />
+    <MetadataFile FileName="UPWSSage2.xsd" MetadataType="Schema" ID="8964ff08-ed6e-42a0-909f-944e2144e8d1" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd16" />
+    <MetadataFile FileName="UPWSSage3.xsd" MetadataType="Schema" ID="08927721-f79a-45d4-bcc7-69a716c7dd07" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd21" />
+    <MetadataFile FileName="UPWSSage4.xsd" MetadataType="Schema" ID="5470942a-e053-4ddb-8ffb-8a754f736742" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd22" />
+    <MetadataFile FileName="UPWSSage5.xsd" MetadataType="Schema" ID="e344a1df-7341-4a14-b7a6-7fe930f82a4d" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd13" />
+    <MetadataFile FileName="UPWSSage6.xsd" MetadataType="Schema" ID="e4950d5f-df85-49ec-91db-4cf9fd1095be" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd19" />
+    <MetadataFile FileName="UPWSSage7.xsd" MetadataType="Schema" ID="5ecd59dc-22f9-4a1a-bd08-4218d5194d79" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd20" />
+    <MetadataFile FileName="UPWSSage.disco" MetadataType="Disco" ID="6a9a7c03-0ac1-4d23-8c10-8d566be0dbb0" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?disco" />
+    <MetadataFile FileName="UPWSSage8.xsd" MetadataType="Schema" ID="b72b5e83-f319-41b7-9755-0653224f444a" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd17" />
+    <MetadataFile FileName="UPWSSage9.xsd" MetadataType="Schema" ID="42a0612c-22e0-4c61-8242-91311f46c416" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd18" />
+    <MetadataFile FileName="UPWSSage10.xsd" MetadataType="Schema" ID="c36e8b45-cb39-4114-b09c-4cb614d4b812" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd0" />
+    <MetadataFile FileName="UPWSSage11.xsd" MetadataType="Schema" ID="2a03cff6-3589-4d50-b0d2-b23b26e2b282" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd10" />
+    <MetadataFile FileName="UPWSSage12.xsd" MetadataType="Schema" ID="a5e93fbf-dc1b-4350-8556-711a76c45b02" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd4" />
+    <MetadataFile FileName="UPWSSage13.xsd" MetadataType="Schema" ID="d7c4b87b-646d-4609-a460-d96a0e20145e" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd5" />
+    <MetadataFile FileName="UPWSSage14.xsd" MetadataType="Schema" ID="3b0de499-abf6-402e-a893-439fecf5eb3d" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd6" />
+    <MetadataFile FileName="UPWSSage15.xsd" MetadataType="Schema" ID="b7dc7fa7-3267-4910-b5a9-36470aba2122" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd7" />
+    <MetadataFile FileName="UPWSSage_100C_SBS.wsdl" MetadataType="Wsdl" ID="583a4729-858a-4e0a-8ec3-9acce5248bbf" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?wsdl" />
+    <MetadataFile FileName="UPWSSage16.xsd" MetadataType="Schema" ID="5458c681-e704-4f51-a1b6-dd4bb23fbb18" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd1" />
+    <MetadataFile FileName="UPWSSage17.xsd" MetadataType="Schema" ID="e07f228f-a120-45f9-87f7-dfe8a155035a" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd2" />
+    <MetadataFile FileName="UPWSSage18.xsd" MetadataType="Schema" ID="ff673140-3564-482b-b50b-467aef79fd90" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd3" />
+    <MetadataFile FileName="UPWSSage19.xsd" MetadataType="Schema" ID="71df5204-2023-4f28-9916-9c33c1fa2dcb" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd23" />
+    <MetadataFile FileName="UPWSSage20.xsd" MetadataType="Schema" ID="d840c1ac-f906-4a01-b568-4108391290a5" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd11" />
+    <MetadataFile FileName="UPWSSage21.xsd" MetadataType="Schema" ID="9858ce97-92bb-4345-b419-1c93682f0f0e" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd15" />
+    <MetadataFile FileName="UPWSSage22.xsd" MetadataType="Schema" ID="03a2d211-f2c0-4f30-afdb-bf809b674577" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd8" />
+    <MetadataFile FileName="UPWSSage23.xsd" MetadataType="Schema" ID="37f90bcd-5f58-4ae5-bae1-a3152aaf3577" SourceId="1" SourceUrl="http://wsap100c/UPWSSage.svc?xsd=xsd9" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
